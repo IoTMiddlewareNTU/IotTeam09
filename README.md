@@ -24,10 +24,10 @@
 4. Displayer (LCD displayer/ hard)
     * display garbage type
     * assets: type *(short)*
-5. CanLid
+5. CanLid (light actuator/ hard)
     * control lock according to *type* from Communicator
     * assets: open *(boolean)*
-5. HeightTracker
+5. HeightTracker (ultrasonic detector/ hard)
     * track height inside trash can
     * assets: is_full *(boolean)*
 * **Note**: type asset values and meanings
@@ -39,4 +39,3 @@
 #### 3. Scenario & Operation
 * Simulate 5 trash cans running on SmartCan application
 * **Scenario**: 2-3 types of trash
- 
