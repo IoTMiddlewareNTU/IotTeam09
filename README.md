@@ -1,10 +1,10 @@
 # WuKong IoT Final Project: SmartCans
 
 #### EXECUTION
-` > cd src/infuser
-> gradle
-> cd wukong/master
-> python master_server.py `
+` $ cd src/infuser
+$ gradle
+$ cd wukong/master
+$ python master_server.py `
 
 #### 1. Equipment
 * LCD text display x5
