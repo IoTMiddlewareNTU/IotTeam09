@@ -1,5 +1,11 @@
 # WuKong IoT Final Project: SmartCans
 
+#### EXECUTION
+' cd src/infuser
+' gradle
+' cd wukong/master
+' python master_server.py
+
 #### 1. Equipment
 * LCD text display x5
 * trash cans x2
@@ -14,16 +20,16 @@
     * notify Alerter to change status
     * assets: types (*short*)
     * inputs: alert x5 (*boolean*, **Communicator**)
-    * outputs: clean (*boolean*, **Alerter**), type x5 (*short*, **Communicator**)
+    * outputs: clean (*boolean*, **Alerter**), assign_type x5 (*short*, **Communicator**)
 2. Alerter (light actuator/ hard)
     * cleaning squad
     * inputs: clean (*boolean*)
     * outputs: none
-3. Communicator (device/ virtual)
+3. CanController (device/ virtual)
     * remember garbage type
     * control LCD displayer
     * communicate with assigner
-    * inputs:  type (*short*, **Assigner**), is_full (*boolean*, **Communicator**) 
+    * inputs:  assign_type (*short*, **Assigner**), is_full (*boolean*, **Communicator**) 
     * outputs: alert (*boolean*, **Assigner**), type (*short*, **Displayer**), lock (*boolean*, **Lock**)
 4. Displayer (LCD displayer/ hard)
     * display garbage type
@@ -36,10 +42,10 @@
     * outputs: is_full (*boolean*, **Communicator**)
 
 * **Note**: type asset values and meanings
-    * -1: trash can is unavailable
-    * 0: general trash
-    * 1: paper
-    * 2: plastic
+    * 0: trash can is unavailable
+    * 1: general trash
+    * 2: paper
+    * 3: plastic
 
 #### 3. Scenario & Operation
 * Simulate 5 trash cans running on SmartCan application
