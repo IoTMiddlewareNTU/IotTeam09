@@ -12,24 +12,29 @@
 1. Assigner (master/ virtual)
     * keep track of all trash cans & garbage types
     * notify Alerter to change status
-    * assets: is_full *(boolean)*, types *(short)*
+    * assets: types (*short*)
+    * inputs: alert*5 (*boolean*, **Communicator**)
+    * outputs: clean (*boolean*, **Alerter**), type*5 (*short*, **Communicator**)
 2. Alerter (light actuator/ hard)
     * cleaning squad
-    * assets: is_full *(boolean)*
+    * inputs: clean (*boolean*)
+    * outputs: none
 3. Communicator (device/ virtual)
     * remember garbage type
     * control LCD displayer
     * communicate with assigner
-    * assets: is_full *(boolean)*, type *(short)*
+    * inputs:  type (*short*, **Assigner**), is_full (*boolean*, **Communicator**) 
+    * outputs: alert (*boolean*, **Assigner**), type (*short*, **Displayer**), lock (*boolean*, **Lock**)
 4. Displayer (LCD displayer/ hard)
     * display garbage type
-    * assets: type *(short)*
-5. CanLid (light actuator/ hard)
-    * control lock according to *type* from Communicator
-    * assets: open *(boolean)*
+    * inputs: type (*short*, **Communicator**)
+5. Lock (light actuator/ hard)
+    * control lock according to *lock* from Communicator
+    * inputs: lock (*boolean*, **Communicator**)
 5. HeightTracker (ultrasonic detector/ hard)
     * track height inside trash can
-    * assets: is_full *(boolean)*
+    * outputs: is_full (*boolean*, **Communicator**)
+
 * **Note**: type asset values and meanings
     * -1: trash can is unavailable
     * 0: general trash
