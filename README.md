@@ -1,6 +1,6 @@
 # WuKong IoT Final Project: SmartCans
 
-#### EXECUTION
+#### Execution
 ` $ cd src/infuser `
 ` $ gradle `
 ` $ cd wukong/master `
