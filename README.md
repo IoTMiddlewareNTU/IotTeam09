@@ -1,20 +1,20 @@
 # WuKong IoT Final Project: SmartCans
 
 #### 1. Equipment
-* LCD text display * 5
-* trash cans * 2
-* ultrasonic distance detector * 2
-* catflap * 2 (DIY with PE boards)
-* LED light bulb * 5
-* Raspberry pi * 5
+* LCD text display x5
+* trash cans x2
+* ultrasonic distance detector x2
+* catflap x2 (DIY with PE boards)
+* LED light bulb x5
+* Raspberry pi x5
 
 #### 2. WuClasses
 1. Assigner (master/ virtual)
     * keep track of all trash cans & garbage types
     * notify Alerter to change status
     * assets: types (*short*)
-    * inputs: alert*5 (*boolean*, **Communicator**)
-    * outputs: clean (*boolean*, **Alerter**), type*5 (*short*, **Communicator**)
+    * inputs: alert x5 (*boolean*, **Communicator**)
+    * outputs: clean (*boolean*, **Alerter**), type x5 (*short*, **Communicator**)
 2. Alerter (light actuator/ hard)
     * cleaning squad
     * inputs: clean (*boolean*)
