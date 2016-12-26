@@ -30,11 +30,15 @@
 5. HeightTracker
     * track height inside trash can
     * assets: is_full *(boolean)*
-* **Note**: type asset values and meanings
+* **Note 1**: type asset values and meanings
     * -1: trash can is unavailable
     * 0: general trash
     * 1: paper
     * 2: plastic
+* **Note 2**: naming conventions
+	* in **WukongStandardLibrary.xml**: `SC_[Class_Name]`
+	* in **udpdevice**: `udpdevice_sc_[class_name].py`
+	* initialization functions: `[Class_Name]()`
 
 #### 3. Scenario & Operation
 * Simulate 5 trash cans running on SmartCan application
