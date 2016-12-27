@@ -15,29 +15,29 @@
 * Raspberry pi x5
 
 #### 2. WuClasses
-1. Assigner (master/ virtual)
+1. SC_Assigner (master/ virtual)
     * keep track of all trash cans & garbage types
     * notify Alerter to change status
     * assets: types (*short*)
     * inputs: alert x5 (*boolean*, **Communicator**)
     * outputs: clean (*boolean*, **Alerter**), assign_type x5 (*short*, **Communicator**)
-2. Alerter (light actuator/ hard)
+2. SC_Alerter (light actuator/ hard)
     * cleaning squad
     * inputs: clean (*boolean*)
     * outputs: none
-3. CanController (device/ virtual)
+3. SC_Can_Controller (device/ virtual)
     * remember garbage type
     * control LCD displayer
     * communicate with assigner
     * inputs:  assign_type (*short*, **Assigner**), is_full (*boolean*, **Communicator**) 
     * outputs: alert (*boolean*, **Assigner**), type (*short*, **Displayer**), lock (*boolean*, **Lock**)
-4. Displayer (LCD displayer/ hard)
+4. SC_Displayer (LCD displayer/ hard)
     * display garbage type
     * inputs: type (*short*, **Communicator**)
-5. Lock (light actuator/ hard)
+5. SC_Lock (light actuator/ hard)
     * control lock according to *lock* from Communicator
     * inputs: lock (*boolean*, **Communicator**)
-5. HeightTracker (ultrasonic detector/ hard)
+5. SC_Height_Tracker (ultrasonic detector/ hard)
     * track height inside trash can
 
 * **Note 1**: type asset values and meanings
