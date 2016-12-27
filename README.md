@@ -1,5 +1,8 @@
 # WuKong IoT Final Project: SmartCans
 
+* Raspberry Pi login: (username, password) = (pi, smartcan2016)
+* Connect to network 'elisaroo'
+
 #### Execution
 * Install RPi.GPIO
 * ` $ cd src/infuser `
