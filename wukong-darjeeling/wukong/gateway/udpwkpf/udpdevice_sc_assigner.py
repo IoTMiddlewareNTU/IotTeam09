@@ -17,7 +17,7 @@ if __name__ == "__main__":
             # 0-(cans-1): assign_type, cans-(2*cans-1): alert, 2*cans: clean 
             for can_index in range(0, self.cans, 1):
                 obj.setProperty(can_index, 3)
-                if pID == self.cans + can_index && val == True:
+                if pID == self.cans + can_index and val == True:
                     print "Alert from can no. ", can_index
                     obj.setProperty(self.cans * 2, True)
 
