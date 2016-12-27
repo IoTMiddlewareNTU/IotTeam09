@@ -9,7 +9,7 @@ PIN_TYPE_I2C     = 2
 PIN_MODE_INPUT   = 0
 PIN_MODE_OUTPUT  = 1
 
-device_type = DEVICE_TYPE_RPI
+device_type = DEVICE_TYPE_GPI
 
 if device_type == DEVICE_TYPE_MRAA:
     import mraa
