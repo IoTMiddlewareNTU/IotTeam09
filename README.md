@@ -1,10 +1,14 @@
 # WuKong IoT Final Project: SmartCans
 
 #### Execution
-` $ cd src/infuser `
-` $ gradle `
-` $ cd wukong/master `
-` $ python master_server.py `
+* Install RPi.GPIO
+* ` $ cd src/infuser `
+* ` $ gradle `
+* ` $ cd wukong/master `
+* ` $ python master_server.py `
+* ` $ cd wukong/gateway`
+* Configure IP settings in `gtwconfig.py`
+* ` $ python start_gateway.py `
 
 #### 1. Equipment
 * LCD text display x5
@@ -46,9 +50,9 @@
     * 2: paper
     * 3: plastic
 * **Note 2**: naming conventions
-	* in **WukongStandardLibrary.xml**: `SC_[Class_Name]`
+	* in **WukongStandardLibrary.xml**: `SC_[ClassName]`
 	* in **udpdevice**: `udpdevice_sc_[class_name].py`
-	* initialization functions: `[Class_Name]()`
+	* initialization functions: `[ClassName]()`
 
 #### 3. Scenario & Operation
 * Simulate 5 trash cans running on SmartCan application

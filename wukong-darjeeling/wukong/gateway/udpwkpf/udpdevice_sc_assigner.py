@@ -7,11 +7,12 @@ if __name__ == "__main__":
     class Assigner(WuClass):
         def __init__(self):
             WuClass.__init__(self)
-            self.loadClass('Assigner')
-			self.types = 4 # 0: unavailable, 1: general, 2: paper, 3: plastic
+            self.loadClass('SC_Assigner')
+            self.types = 4 # 0: unavailable, 1: general, 2: paper, 3: plastic
 
         def update(self,obj,pID=None,val=None):
-			pass
+            obj.setProperty(3, 1)
+            obj.setProperty(4, 2)
 
     class MyDevice(Device):
         def __init__(self,addr,localaddr):

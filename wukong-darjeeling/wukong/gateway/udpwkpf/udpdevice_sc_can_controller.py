@@ -7,10 +7,11 @@ if __name__ == "__main__":
     class CanController(WuClass):
         def __init__(self):
             WuClass.__init__(self)
-            self.loadClass('Can_Controller')
+            self.loadClass('SC_CanController')
 
         def update(self,obj,pID=None,val=None):
-			pass
+            if pID == 0:
+                print "assigned val = ", val
 
     class MyDevice(Device):
         def __init__(self,addr,localaddr):
