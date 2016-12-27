@@ -9,10 +9,17 @@ if __name__ == "__main__":
             WuClass.__init__(self)
             self.loadClass('SC_Assigner')
             self.types = 4 # 0: unavailable, 1: general, 2: paper, 3: plastic
+            self.cans = 2
+            self.is_full = [0, 0]
 
         def update(self,obj,pID=None,val=None):
-            obj.setProperty(3, 1)
-            obj.setProperty(4, 2)
+            # obj properties
+            # 0-(cans-1): assign_type, cans-(2*cans-1): alert, 2*cans: clean 
+            for can_index in range(0, self.cans, 1):
+                obj.setProperty(can_index, 3)
+                if pID == self.cans + can_index && val == True:
+                    print "Alert from can no. ", can_index
+                    obj.setProperty(self.cans * 2, True)
 
     class MyDevice(Device):
         def __init__(self,addr,localaddr):
