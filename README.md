@@ -3,7 +3,7 @@
 * Raspberry Pi login: (username, password) = (pi, smartcan2016)
 * Connect to network 'elisaroo'
 
-#### Execution
+#### Setup
 * **On PC:**
     * Install gradle
         * ` $ sudo apt-get update `
@@ -11,8 +11,6 @@
         * ` $ sudo apt-get install openjdk-7-jdk `
     * ` $ cd src/infuser `
     * ` $ gradle `
-    * ` $ cd wukong/master `
-    * ` $ python master_server.py `
 * **On Pi:**
     * ` $ sudo apt-get update  `
     * ` $ sudo apt-get install python-twisted python-cjson python-gevent  `
@@ -26,6 +24,12 @@
         * ` $ cd GrovePi/Script `
         * ` $ sudo chmod +x install.sh `
         * ` $ sudo ./install.sh `
+
+#### Execution
+* **On PC:**
+    * ` $ cd wukong/master `
+    * ` $ python master_server.py `
+* **On Pi:**
     * ` $ cd wukong/gateway`
     * configure IP settings in `gtwconfig.py`
     * ` $ python start_gateway.py `
