@@ -14,8 +14,6 @@
     * ` $ cd wukong/master `
     * ` $ python master_server.py `
 * **On Pi:**
-    * Change the update mirror site of Raspbian repository: ` $ sudo nano /etc/apt/sources.list `
-    * Replace the link "http://mirrordirector.raspbian.org/raspbian" with the closest server from the official list. https://www.raspbian.org/RaspbianMirrors: ` $ deb http://mirrordirector.raspbian.org/raspbian jessie ... `
     * ` $ sudo apt-get update  `
     * ` $ sudo apt-get install python-twisted python-cjson python-gevent  `
     * ` $ sudo apt-get install sqlite3 python-netifaces `
