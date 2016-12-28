@@ -9,10 +9,6 @@
         * ` $ sudo apt-get update `
         * ` $ sudo apt-get install gradle `
         * ` $ sudo apt-get install openjdk-7-jdk `
-    * Install GrovePi environment
-        * ` $ cd GrovePi/Script `
-        * ` $ sudo chmod +x install.sh `
-        * ` $ sudo ./install.sh `
     * ` $ cd src/infuser `
     * ` $ gradle `
     * ` $ cd wukong/master `
@@ -26,6 +22,10 @@
     * Install grovepi lib:
         * ` $ sudo apt-get install python-smbus i2c-tools `
         * ` $ sudo raspi-config `
+    * Install GrovePi environment
+        * ` $ cd GrovePi/Script `
+        * ` $ sudo chmod +x install.sh `
+        * ` $ sudo ./install.sh `
     * ` $ cd wukong/gateway`
     * configure IP settings in `gtwconfig.py`
     * ` $ python start_gateway.py `
