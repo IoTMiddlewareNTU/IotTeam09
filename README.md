@@ -2,7 +2,7 @@
 
 * Raspberry Pi login: (username, password) = (pi, smartcan2016)
 * Connect to network 'Kochun'
-* IPs: 172.20.10.(10, 11, 12, 14)
+* IPs: jim 172.20.10.(10, 12) and elisedc 172.20.10.(11, 14)
 
 #### Setup
 * **On PC:**
