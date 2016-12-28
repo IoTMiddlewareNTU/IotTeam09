@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# GrovePi Example for using the Grove Ultrasonic Ranger (http://www.seeedstudio.com/wiki/Grove_-_Ultrasonic_Ranger)
+# GrovePi Example for using the Grove - LCD RGB Backlight (http://www.seeedstudio.com/wiki/Grove_-_LCD_RGB_Backlight)
 #
 # The GrovePi connects the Raspberry Pi and Grove sensors.  You can learn more about GrovePi here:  http://www.dexterindustries.com/GrovePi
 #
@@ -33,18 +33,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 '''
 
-import grovepi
+from grove_rgb_lcd import *
 
-# Connect the Grove Ultrasonic Ranger to digital port D4
-# SIG,NC,VCC,GND
-ultrasonic_ranger = 7
+setText("Wariard\ngay")
+setRGB(0,128,64)
 
-while True:
-    try:
-        # Read distance value from Ultrasonic
-        print(grovepi.ultrasonicRead(ultrasonic_ranger))
+# Slowly change the colors every 0.01 seconds.
+'''for c in range(0,255):
+    setRGB(c,255-c,0)
+    time.sleep(0.01)
 
-    except TypeError:
-        print ("Error")
-    except IOError:
-        print ("Error")
+setRGB(0,255,0)
+setText("Bye bye, this should wrap"'''

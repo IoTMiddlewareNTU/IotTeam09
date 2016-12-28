@@ -3,10 +3,12 @@ import time,sys
 from udpwkpf import WuClass, Device
 from twisted.internet import reactor
 from udpwkpf_io_interface import *
+from grove_rgb_lcd import *
 
 #Trig_Pin = 8
 #Echo_Pin = 9
 ultrasonic_ranger = 7;
+close = 0
 
 class Ultrasound_sensor(WuClass):
     def __init__(self):
@@ -15,25 +17,27 @@ class Ultrasound_sensor(WuClass):
         print "Ultrasound sensor init!"
 
     def update(self,obj,pID=None,val=None):
-        trig_gpio = pin_mode(Trig_Pin, PIN_TYPE_DIGITAL, PIN_MODE_OUTPUT)
-        digital_write(trig_gpio, 0)
-        time.sleep(0.005)
-        digital_write(trig_gpio, 1)
-        time.sleep(0.002)
-        digital_write(trig_gpio, 0)
 
-        echo_gpio = pin_mode(Echo_Pin, PIN_TYPE_DIGITAL, PIN_MODE_INPUT)
-        centimeter = int(self.pulseIn(echo_gpio))
-        if centimeter >= 0:
-            obj.setProperty(0, centimeter)
-            print "cm: %d" % centimeter
-        else :
-            print "no value this time"
+        #echo_gpio = pin_mode(Echo_Pin, PIN_TYPE_DIGITAL, PIN_MODE_INPUT)
+        echo_gpio = grovepi.ultrasonicRead(ultrasonic_ranger)
+	#centimeter = int(self.pulseIn(echo_gpio))
+        print(echo_gpio)
+	time.sleep(0.05)
+	obj.setProperty(0, echo_gpio)
+	global close
+	#print "close="+str(close)
+	if echo_gpio > 5 and close==1:
+	    setText("distance OK\nwariard gay")
+	    close = 0
+	elif echo_gpio<=5 and close==0:
+	    setText("too close\nylc love wariard")
+	    close = 1
+	    
 
     def pulseIn(self, echo_gpio):
         pulseOn = -1
         pulseOff = -1
-
+	print(echo_gpio)
         count1 = 0
         while digital_read(echo_gpio) == 0 and count1 < 5000:
             pulseOff = time.time()
