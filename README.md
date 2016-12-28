@@ -31,6 +31,9 @@
         * ` $ cd GrovePi/Script `
         * ` $ sudo chmod +x install.sh `
         * ` $ sudo ./install.sh `
+        * ` $ cd Grovepi/Software/Python/ `
+        * ` $ sudo python setup.py install `
+    * Install RPi.GPIO
 
 ##### Execution
 * **On PC:**
