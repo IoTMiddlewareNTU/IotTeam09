@@ -4,7 +4,10 @@
 * Connect to network 'elisaroo'
 
 #### Execution
-* Install RPi.GPIO
+* Install GrovePi environment
+* ` $ cd GrovePi/Script `
+* ` $ sudo chmod +x install.sh `
+* ` $ sudo ./install.sh `
 * ` $ cd src/infuser `
 * ` $ gradle `
 * ` $ cd wukong/master `
@@ -60,3 +63,6 @@
 #### 3. Scenario & Operation
 * Simulate 5 trash cans running on SmartCan application
 * **Scenario**: 2-3 types of trash
+
+* Reference
+    * GrovePi install: https://www.dexterindustries.com/GrovePi/get-started-with-the-grovepi/setting-software/
