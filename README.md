@@ -9,7 +9,7 @@
 * Connect to network 'Kochun'
 * IPs: jim 172.20.10.(10, 12) and elisedc 172.20.10.(11, 14)
 
-#### Setup
+##### Setup
 * **On PC:**
     * Install gradle
         * ` $ sudo apt-get update `
@@ -32,7 +32,7 @@
         * ` $ sudo chmod +x install.sh `
         * ` $ sudo ./install.sh `
 
-#### Execution
+##### Execution
 * **On PC:**
     * ` $ cd wukong/master `
     * ` $ python master_server.py `
@@ -41,7 +41,7 @@
     * configure IP settings in `gtwconfig.py`
     * ` $ python start_gateway.py `
 
-#### 1. Equipment
+#### 3. Equipment
 * LCD text display x5
 * trash cans x2
 * ultrasonic distance detector x2
@@ -49,7 +49,7 @@
 * LED light bulb x5
 * Raspberry pi x5
 
-#### 2. WuClasses
+#### 4. WuClasses
 1. SC_Assigner (master/ virtual)
     * keep track of all trash cans & garbage types
     * notify Alerter to change status
@@ -72,7 +72,7 @@
 5. SC_Lock (light actuator/ hard)
     * control lock according to *lock* from Communicator
     * inputs: lock (*boolean*, **Communicator**)
-5. SC_Height_Tracker (ultrasonic detector/ hard)
+6. SC_Height_Tracker (ultrasonic detector/ hard)
     * track height inside trash can
 
 * **Note 1**: type asset values and meanings
@@ -85,11 +85,11 @@
 	* in **udpdevice**: `udpdevice_sc_[class_name].py`
 	* initialization functions: `[ClassName]()`
 
-#### 3. Scenario & Operation
+#### 4. Scenario & Operation
 * Simulate 5 trash cans running on SmartCan application
 * **Scenario**: 2-3 types of trash
 
-* Reference
+#### 5. Reference
     * Wukong setup for Raspberry Pi: https://wukongsun.gitbooks.io/wukong-release-0-4/content/Ch3/Ch3_Boardsetup_for_Raspberry_Pi_Board.html
     * GrovePi install: https://www.dexterindustries.com/GrovePi/get-started-with-the-grovepi/setting-software/
     * VNC display through ethernet: https://diyhacking.com/connect-raspberry-pi-to-laptop-display/
