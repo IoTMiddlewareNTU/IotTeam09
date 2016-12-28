@@ -4,16 +4,20 @@
 * Connect to network 'elisaroo'
 
 #### Execution
+* Install gradle
+    * ` $ sudo apt-get update `
+    * ` $ sudo apt-get install gradle `
+    * ` $ sudo apt-get install openjdk-7-jdk `
 * Install GrovePi environment
-* ` $ cd GrovePi/Script `
-* ` $ sudo chmod +x install.sh `
-* ` $ sudo ./install.sh `
+    * ` $ cd GrovePi/Script `
+    * ` $ sudo chmod +x install.sh `
+    * ` $ sudo ./install.sh `
 * ` $ cd src/infuser `
 * ` $ gradle `
 * ` $ cd wukong/master `
 * ` $ python master_server.py `
 * ` $ cd wukong/gateway`
-* Configure IP settings in `gtwconfig.py`
+* configure IP settings in `gtwconfig.py`
 * ` $ python start_gateway.py `
 
 #### 1. Equipment
