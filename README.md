@@ -34,6 +34,7 @@
         * ` $ cd Grovepi/Software/Python/ `
         * ` $ sudo python setup.py install `
     * Install RPi.GPIO
+        * ` $ sudo apt-get -y install python-rpi.gpio `
 
 ##### Execution
 * **On PC:**
