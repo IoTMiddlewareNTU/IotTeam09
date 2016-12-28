@@ -24,8 +24,8 @@
     * sudo apt-get install python-twisted python-cjson python-gevent  
     * sudo apt-get install sqlite3 python-netifaces
     * Install grovepi lib:
-        * sudo apt-get install python-smbus i2c-tools
-        * sudo raspi-config
+        * ` $ sudo apt-get install python-smbus i2c-tools `
+        * ` $ sudo raspi-config `
     * ` $ cd wukong/gateway`
     * configure IP settings in `gtwconfig.py`
     * ` $ python start_gateway.py `
