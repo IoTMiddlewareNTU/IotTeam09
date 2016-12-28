@@ -4,6 +4,7 @@
 * Connect to network 'elisaroo'
 
 #### Execution
+**On PC:**
 * Install gradle
     * ` $ sudo apt-get update `
     * ` $ sudo apt-get install gradle `
@@ -16,6 +17,7 @@
 * ` $ gradle `
 * ` $ cd wukong/master `
 * ` $ python master_server.py `
+**On Pi:**
 * ` $ cd wukong/gateway`
 * configure IP settings in `gtwconfig.py`
 * ` $ python start_gateway.py `
