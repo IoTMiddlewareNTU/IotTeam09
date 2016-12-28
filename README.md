@@ -66,3 +66,4 @@
 
 * Reference
     * GrovePi install: https://www.dexterindustries.com/GrovePi/get-started-with-the-grovepi/setting-software/
+    * VNC display through ethernet: https://diyhacking.com/connect-raspberry-pi-to-laptop-display/
