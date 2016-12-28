@@ -1,7 +1,8 @@
 # WuKong IoT Final Project: SmartCans
 
 * Raspberry Pi login: (username, password) = (pi, smartcan2016)
-* Connect to network 'elisaroo'
+* Connect to network 'Kochun'
+* IPs: 172.20.10.(10, 11, 12, 14)
 
 #### Setup
 * **On PC:**
@@ -20,6 +21,7 @@
         * ` $ sudo raspi-config `
         * Go to Advanced --> I2C and select yes
         * ` $ sudo reboot `
+        * Check if success: ` $ sudo i2cdetect -y 1 `
     * Install GrovePi environment
         * ` $ cd GrovePi/Script `
         * ` $ sudo chmod +x install.sh `
