@@ -1,5 +1,10 @@
 # WuKong IoT Final Project: SmartCans
 
+#### 1. Team Members
+* B03902007 Elise Cheng (elisedc)
+* B03902013 Jim Wu (jim841019g)
+
+#### 2. Basic Info
 * Raspberry Pi login: (username, password) = (pi, smartcan2016)
 * Connect to network 'Kochun'
 * IPs: jim 172.20.10.(10, 12) and elisedc 172.20.10.(11, 14)
