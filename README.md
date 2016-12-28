@@ -20,6 +20,8 @@
     * Install grovepi lib:
         * ` $ sudo apt-get install python-smbus i2c-tools `
         * ` $ sudo raspi-config `
+        * Go to Advanced --> I2C and select yes
+        * ` $ sudo reboot `
     * Install GrovePi environment
         * ` $ cd GrovePi/Script `
         * ` $ sudo chmod +x install.sh `
