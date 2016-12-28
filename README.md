@@ -16,9 +16,9 @@
 * **On Pi:**
     * Change the update mirror site of Raspbian repository: ` $ sudo nano /etc/apt/sources.list `
     * Replace the link "http://mirrordirector.raspbian.org/raspbian" with the closest server from the official list. https://www.raspbian.org/RaspbianMirrors: ` $ deb http://mirrordirector.raspbian.org/raspbian jessie ... `
-    * sudo apt-get update  
-    * sudo apt-get install python-twisted python-cjson python-gevent  
-    * sudo apt-get install sqlite3 python-netifaces
+    * ` $ sudo apt-get update  `
+    * ` $ sudo apt-get install python-twisted python-cjson python-gevent  `
+    * ` $ sudo apt-get install sqlite3 python-netifaces `
     * Install grovepi lib:
         * ` $ sudo apt-get install python-smbus i2c-tools `
         * ` $ sudo raspi-config `
