@@ -90,6 +90,6 @@
 * **Scenario**: 2-3 types of trash
 
 #### 5. Reference
-    * Wukong setup for Raspberry Pi: https://wukongsun.gitbooks.io/wukong-release-0-4/content/Ch3/Ch3_Boardsetup_for_Raspberry_Pi_Board.html
-    * GrovePi install: https://www.dexterindustries.com/GrovePi/get-started-with-the-grovepi/setting-software/
-    * VNC display through ethernet: https://diyhacking.com/connect-raspberry-pi-to-laptop-display/
+* Wukong setup for Raspberry Pi: https://wukongsun.gitbooks.io/wukong-release-0-4/content/Ch3/Ch3_Boardsetup_for_Raspberry_Pi_Board.html
+* GrovePi install: https://www.dexterindustries.com/GrovePi/get-started-with-the-grovepi/setting-software/
+* VNC display through ethernet: https://diyhacking.com/connect-raspberry-pi-to-laptop-display/
