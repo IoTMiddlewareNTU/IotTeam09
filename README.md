@@ -5,22 +5,30 @@
 
 #### Execution
 * **On PC:**
-* Install gradle
-    * ` $ sudo apt-get update `
-    * ` $ sudo apt-get install gradle `
-    * ` $ sudo apt-get install openjdk-7-jdk `
-* Install GrovePi environment
-    * ` $ cd GrovePi/Script `
-    * ` $ sudo chmod +x install.sh `
-    * ` $ sudo ./install.sh `
-* ` $ cd src/infuser `
-* ` $ gradle `
-* ` $ cd wukong/master `
-* ` $ python master_server.py `
+    * Install gradle
+        * ` $ sudo apt-get update `
+        * ` $ sudo apt-get install gradle `
+        * ` $ sudo apt-get install openjdk-7-jdk `
+    * Install GrovePi environment
+        * ` $ cd GrovePi/Script `
+        * ` $ sudo chmod +x install.sh `
+        * ` $ sudo ./install.sh `
+    * ` $ cd src/infuser `
+    * ` $ gradle `
+    * ` $ cd wukong/master `
+    * ` $ python master_server.py `
 * **On Pi:**
-* ` $ cd wukong/gateway`
-* configure IP settings in `gtwconfig.py`
-* ` $ python start_gateway.py `
+    * Change the update mirror site of Raspbian repository: ` $ sudo nano /etc/apt/sources.list `
+    * Replace the link "http://mirrordirector.raspbian.org/raspbian" with the closest server from the official list. https://www.raspbian.org/RaspbianMirrors: ` $ deb http://mirrordirector.raspbian.org/raspbian jessie ... `
+    * sudo apt-get update  
+    * sudo apt-get install python-twisted python-cjson python-gevent  
+    * sudo apt-get install sqlite3 python-netifaces
+    * Install grovepi lib:
+        * sudo apt-get install python-smbus i2c-tools
+        * sudo raspi-config
+    * ` $ cd wukong/gateway`
+    * configure IP settings in `gtwconfig.py`
+    * ` $ python start_gateway.py `
 
 #### 1. Equipment
 * LCD text display x5
@@ -71,5 +79,6 @@
 * **Scenario**: 2-3 types of trash
 
 * Reference
+    * Wukong setup for Raspberry Pi: https://wukongsun.gitbooks.io/wukong-release-0-4/content/Ch3/Ch3_Boardsetup_for_Raspberry_Pi_Board.html
     * GrovePi install: https://www.dexterindustries.com/GrovePi/get-started-with-the-grovepi/setting-software/
     * VNC display through ethernet: https://diyhacking.com/connect-raspberry-pi-to-laptop-display/
