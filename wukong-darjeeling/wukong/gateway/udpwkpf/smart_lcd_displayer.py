@@ -10,7 +10,9 @@ if __name__ == "__main__":
         def __init__(self):
             WuClass.__init__(self)
             self.loadClass('SC_Displayer_1')
-            print "LCD Displayer init success"
+            setText("LCD Displayer \ninit success")
+            setRGB(0,128,64)
+	    print "LCD Displayer init success"
 
         def update(self,obj,pID=None,val=None):
             try:
@@ -33,7 +35,7 @@ if __name__ == "__main__":
         def init(self):
             m1 = SC_Displayer_1()
             self.addClass(m1,0)
-            self.obj_sc_displayer_1 = self.addObject(m1.ID)
+            self.obj_sc_displayer = self.addObject(m1.ID)
 
 
     if len(sys.argv) <= 2:
