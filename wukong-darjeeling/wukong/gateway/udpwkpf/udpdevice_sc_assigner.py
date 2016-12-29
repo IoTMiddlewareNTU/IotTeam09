@@ -29,7 +29,6 @@ if __name__ == "__main__":
             
             # obj properties are
             # 0-(cans-1): assign_type, cans-(2*cans-1): alert, 2*cans: clean, 2*cans+1: ack
-            obj.setProperty(0, 1)
 
             # check for alerts 
             for can_index in range(0, self.can_num, 1):
@@ -61,12 +60,17 @@ if __name__ == "__main__":
                 if self.type_assigned[type_index] == False:     # if a type is not assigned
                     assigned = False
                     for can_index in range(0, self.can_num, 1):    # find unassigned can that is not full
+                        print '[Assign] type ', type_index
                         if not self.can_alert[can_index] and self.can_type[can_index] == 0:
-                            obj.setProperty(can_index, type_index)
+                            self.can_type[can_index] = type_index
                             self.type_assigned[type_index] = True
                             assigned = True
+                            break
                     if not assigned:
                         print '[Error] Unable to assign type'
+            for can_index in range(0, self.can_num, 1):
+                    obj.setProperty(can_index, self.can_type[can_index])
+            print 'can_type = ', str(self.can_type), ', can_alert = ', str(self.can_alert), ', type_assigned = ', str(self.type_assigned)
  
     class MyDevice(Device):
         def __init__(self,addr,localaddr):
