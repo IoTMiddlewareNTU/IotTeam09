@@ -29,6 +29,7 @@ if __name__ == "__main__":
             
             # obj properties are
             # 0-(cans-1): assign_type, cans-(2*cans-1): alert, 2*cans: clean, 2*cans+1: ack
+            obj.setProperty(0, 1)
 
             # check for alerts 
             for can_index in range(0, self.can_num, 1):
@@ -59,7 +60,7 @@ if __name__ == "__main__":
             for type_index in range(1, self.type_num, 1): 
                 if self.type_assigned[type_index] == False:     # if a type is not assigned
                     assigned = False
-                    for can_index in range(0, self.cans, 1):    # find unassigned can that is not full
+                    for can_index in range(0, self.can_num, 1):    # find unassigned can that is not full
                         if not self.can_alert[can_index] and self.can_type[can_index] == 0:
                             obj.setProperty(can_index, type_index)
                             self.type_assigned[type_index] = True
