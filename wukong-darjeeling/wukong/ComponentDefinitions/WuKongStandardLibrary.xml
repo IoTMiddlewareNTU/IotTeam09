@@ -646,15 +646,15 @@
 
     <!-- SmartCan -->
     <WuClass name="SC_Assigner" id="25000" virtual="true" type="soft">
-        <property name="alert_1" access="readwrite" datatype="boolean" default="false" />
-        <property name="alert_2" access="readwrite" datatype="boolean" default="false" />
-        <property name="clean" access="readwrite" datatype="boolean" default="false" />
-        <property name="type_1" access="readwrite" datatype="short" default="0" />
-        <property name="type_2" access="readwrite" datatype="short" default="0" />
+        <property name="type_1" access="readonly" datatype="short" default="0" />
+        <property name="type_2" access="readonly" datatype="short" default="0" />
+        <property name="alert_1" access="writeonly" datatype="boolean" default="false" />
+        <property name="alert_2" access="writeonly" datatype="boolean" default="false" />
+        <property name="clean" access="readonly" datatype="boolean" default="false" />
     </WuClass>
 
     <WuClass name="SC_Alerter" id="25001" virtual="false" type="hard">
-    	<property name="clean" access="readwrite" datatype="boolean" default="false" />
+    	<property name="clean" access="writeonly" datatype="boolean" default="false" />
     </WuClass>
 
     <WuClass name="SC_CanController" id="25002" virtual="true" type="soft">

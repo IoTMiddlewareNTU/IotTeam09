@@ -8,19 +8,65 @@ if __name__ == "__main__":
         def __init__(self):
             WuClass.__init__(self)
             self.loadClass('SC_Assigner')
-            self.types = 4 # 0: unavailable, 1: general, 2: paper, 3: plastic
-            self.cans = 2
-            self.is_full = [0, 0]
+            
+            # types
+            self.type_num = 2 # 0: unavailable, 1: general, 2: paper, 3: plastic
+            self.type_assigned = [True, False]
+            
+            # cans
+            self.can_num = 2
+            self.can_type  = [0, 0]
+            self.can_alert = [False, False]
+            
+            # 'clean' asset
+            self.clean_index = self.can_num * 2
+            self.clean_asserted = False
+
+            # 'ack' asset
+            # self.ack_index = self.can_num * 2 + 1
 
         def update(self,obj,pID=None,val=None):
-            # obj properties
-            # 0-(cans-1): assign_type, cans-(2*cans-1): alert, 2*cans: clean 
-            for can_index in range(0, self.cans, 1):
-                obj.setProperty(can_index, 3)
-                if pID == self.cans + can_index and val == True:
-                    print "Alert from can no. ", can_index
-                    obj.setProperty(self.cans * 2, True)
+            
+            # obj properties are
+            # 0-(cans-1): assign_type, cans-(2*cans-1): alert, 2*cans: clean, 2*cans+1: ack
 
+            # check for alerts 
+            for can_index in range(0, self.can_num, 1):
+                if pID == self.can_num + can_index:
+                    if val == True:
+                        print "[Alert] Can no. ", can_index, " is full"
+                        self.can_alert[can_index] = True
+                        self.can_type[can_index] = 0
+                        obj.setProperty(can_index, 0) # assign 0 type to can (unavailable)
+                        self.type_assigned[ self.can_type[can_index] ] = False
+                    elif val == False:
+                        print "[Cleaned] Can no. ", can_index, " is clean"
+                        self.can_alert[can_index] = False
+            
+            # set clean
+            clean = False
+            for a in self.can_alert:
+                if a == True:
+                    clean = True
+            if clean and not self.clean_asserted:
+                obj.setProperty(self.clean_index, True)
+                self.clean_asserted = True
+            elif not clean:
+                obj.setProperty(self.clean_index, False)
+                self.clean_asserted = False
+            
+            # set types
+            for type_index in range(1, self.type_num, 1): 
+                if self.type_assigned[type_index] == False:     # if a type is not assigned
+                    assigned = False
+                    for can_index in range(0, self.cans, 1):    # find unassigned can that is not full
+                        if not self.can_alert[can_index] and self.can_type[can_index] == 0:
+                            obj.setProperty(can_index, type_index)
+                            self.type_assigned[type_index] = True
+                            assigned = True
+                    if not assigned:
+                        print '[Error] Unable to assign type'
+ 
     class MyDevice(Device):
         def __init__(self,addr,localaddr):
             Device.__init__(self,addr,localaddr)
