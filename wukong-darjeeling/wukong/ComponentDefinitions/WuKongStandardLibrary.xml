@@ -644,7 +644,9 @@
         <property name="string_signal"  access="readonly" datatype="string" default="1"/>
     </WuClass>
 
-    <!-- SmartCan -->
+    <!-- SMARTCAN -->
+
+    <!-- Assigner --> 
     <WuClass name="SC_Assigner" id="25000" virtual="true" type="soft">
         <property name="type_1" access="readwrite" datatype="short" default="0" />
         <property name="type_2" access="readwrite" datatype="short" default="0" />
@@ -654,26 +656,48 @@
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="100" />
     </WuClass>
 
+    <!-- Alerter -->
     <WuClass name="SC_Alerter" id="25001" virtual="false" type="hard">
     	<property name="clean" access="readwrite" datatype="boolean" default="false" />
     </WuClass>
 
-    <WuClass name="SC_CanController" id="25002" virtual="false" type="hard">
+    <!-- Trash can 1 -->
+    <WuClass name="SC_Can_Controller_1" id="25002" virtual="false" type="hard">
     	<property name="assign_type" access="readwrite" datatype="short" default="0" />
     	<property name="alert" access="readwrite" datatype="boolean" default="false" />
     	<property name="lock" access="readwrite" datatype="boolean" default="true" />
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="100" />
     </WuClass>
 
-    <WuClass name="SC_Displayer" id="25003" virtual="false" type="hard">
+    <WuClass name="SC_Displayer_1" id="25003" virtual="false" type="hard">
     	<property name="type" access="readwrite" datatype="short" default="0" />
     </WuClass>
 
-    <WuClass name="SC_Lock" id="25004" virtual="false" type="hard">
+    <WuClass name="SC_Lock_1" id="25004" virtual="false" type="hard">
     	<property name="lock" access="readwrite" datatype="boolean" default="true" />
     </WuClass>
 
-    <WuClass name="SC_HeightTracker" id="25005" virtual="false" type="hard">
+    <WuClass name="SC_Height_Tracker_1" id="25005" virtual="false" type="hard">
+    	<property name="is_full" access="readwrite" datatype="boolean" default="false" />
+    </WuClass>
+
+    <!-- Trash can 2 -->
+    <WuClass name="SC_Can_Controller_2" id="25006" virtual="false" type="hard">
+    	<property name="assign_type" access="readwrite" datatype="short" default="0" />
+    	<property name="alert" access="readwrite" datatype="boolean" default="false" />
+    	<property name="lock" access="readwrite" datatype="boolean" default="true" />
+        <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="100" />
+    </WuClass>
+
+    <WuClass name="SC_Displayer_2" id="25007" virtual="false" type="hard">
+    	<property name="type" access="readwrite" datatype="short" default="0" />
+    </WuClass>
+
+    <WuClass name="SC_Lock_2" id="25008" virtual="false" type="hard">
+    	<property name="lock" access="readwrite" datatype="boolean" default="true" />
+    </WuClass>
+
+    <WuClass name="SC_Height_Tracker_2" id="25009" virtual="false" type="hard">
     	<property name="is_full" access="readwrite" datatype="boolean" default="false" />
     </WuClass>
 

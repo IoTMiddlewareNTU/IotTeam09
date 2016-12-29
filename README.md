@@ -90,9 +90,9 @@
     * 2: paper
     * 3: plastic
 * **Note 2**: naming conventions
-	* in **WukongStandardLibrary.xml**: `SC_[ClassName]`
+	* in **WukongStandardLibrary.xml**: `SC_[Class_Name]`
 	* in **udpdevice**: `udpdevice_sc_[class_name].py`
-	* initialization functions: `[ClassName]()`
+	* initialization functions: `[Class_Name]()`
 
 #### 4. Scenario & Operation
 * Simulate 5 trash cans running on SmartCan application

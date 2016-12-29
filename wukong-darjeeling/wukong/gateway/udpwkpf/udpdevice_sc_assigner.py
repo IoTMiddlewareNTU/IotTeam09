@@ -4,7 +4,7 @@ from udpwkpf_io_interface import *
 from twisted.internet import reactor
 
 if __name__ == "__main__":
-    class Assigner(WuClass):
+    class SC_Assigner(WuClass):
         def __init__(self):
             WuClass.__init__(self)
             self.loadClass('SC_Assigner')
@@ -77,7 +77,7 @@ if __name__ == "__main__":
             Device.__init__(self,addr,localaddr)
 
         def init(self):
-            cls = Assigner()
+            cls = SC_Assigner()
             self.addClass(cls,0)
             self.obj_assigner = self.addObject(cls.ID)
 

@@ -4,10 +4,10 @@ from udpwkpf_io_interface import *
 from twisted.internet import reactor
 
 if __name__ == "__main__":
-    class CanController(WuClass):
+    class SC_Can_Controller_2(WuClass):
         def __init__(self):
             WuClass.__init__(self)
-            self.loadClass('SC_CanController')
+            self.loadClass('SC_Can_Controller_2')
 
         def update(self,obj,pID=None,val=None):
             # obj properties are
@@ -25,7 +25,7 @@ if __name__ == "__main__":
             Device.__init__(self,addr,localaddr)
 
         def init(self):
-            cls = CanController()
+            cls = SC_Can_Controller_2()
             self.addClass(cls,0)
             self.obj_can_controller = self.addObject(cls.ID)
 

@@ -4,24 +4,28 @@ from udpwkpf_io_interface import *
 from twisted.internet import reactor
 
 if __name__ == "__main__":
-    class SC_Alerter(WuClass):
+    class SC_Can_Controller_1(WuClass):
         def __init__(self):
             WuClass.__init__(self)
-            self.loadClass('SC_Alerter')
+            self.loadClass('SC_Can_Controller_1')
 
         def update(self,obj,pID=None,val=None):
             # obj properties are
-            # 0: clean (wo)
+            # 0: assigned_val (rw), 1: alert (rw), 2: lock (wr) 
 
             if pID == 0:
-                print "[Alert] Clean"
+                print "[Assigned] New type val = ", val
+                obj.setProperty(0, val)
+            elif pID == 1:
+                print "[Alert] Can is full"
+                obj.setProperty(1, True)
 
     class MyDevice(Device):
         def __init__(self,addr,localaddr):
             Device.__init__(self,addr,localaddr)
 
         def init(self):
-            cls = SC_Alerter()
+            cls = SC_Can_Controller_1()
             self.addClass(cls,0)
             self.obj_can_controller = self.addObject(cls.ID)
 
