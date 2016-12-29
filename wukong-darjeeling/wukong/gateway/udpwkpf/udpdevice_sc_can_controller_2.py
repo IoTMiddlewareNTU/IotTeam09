@@ -18,6 +18,7 @@ if __name__ == "__main__":
                 obj.setProperty(0, val)
             elif pID == 1:
                 print "[Alert] Can is full"
+                obj.setProperty(0, 0)
                 obj.setProperty(1, True)
 
     class MyDevice(Device):
