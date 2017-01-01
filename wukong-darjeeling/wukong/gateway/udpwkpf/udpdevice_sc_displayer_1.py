@@ -17,14 +17,16 @@ if __name__ == "__main__":
         def update(self,obj,pID=None,val=None):
             try:
                 if pID == 0:
-                    if val == True:
-                        setText("Garbage is Full!!!\nPlease throw away!!!")
+                    if val == 0:
+                        setText("Unavailable\n")
+			setRGB(0,64,128)
+			# print "FULL"
+                    elif val == 1:
+			setText("General garbage\n")
 			setRGB(0,128,64)
-			print "FULL"
-                    else:
-			setText("Garbage can available\n")
-			setRGB(0,128,64)
-                        print "NOT FULL"
+                    elif val == 2:
+                        setText("Paper\n")
+                        setRGB(0, 128, 64)
             except IOError:
                 print ("Error")
 
