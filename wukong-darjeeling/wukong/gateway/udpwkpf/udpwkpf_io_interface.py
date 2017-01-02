@@ -9,7 +9,7 @@ PIN_TYPE_I2C     = 2
 PIN_MODE_INPUT   = 0
 PIN_MODE_OUTPUT  = 1
 
-device_type = DEVICE_TYPE_GPI
+device_type = DEVICE_TYPE_RPI
 
 if device_type == DEVICE_TYPE_MRAA:
     import mraa
@@ -20,6 +20,7 @@ elif device_type == DEVICE_TYPE_RPI:
     GPIO.setmode(GPIO.BOARD)
     import grove_rgb_lcd as lcd
     from Sht1x import Sht1x
+    import grovepi
 elif device_type == DEVICE_TYPE_GPI:
     import grovepi
 else:

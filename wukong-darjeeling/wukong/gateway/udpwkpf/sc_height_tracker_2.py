@@ -1,5 +1,6 @@
 import traceback
 import time,sys
+import grovepi
 from udpwkpf import WuClass, Device
 from twisted.internet import reactor
 from udpwkpf_io_interface import *
@@ -20,7 +21,7 @@ class SC_Height_Tracker(WuClass):
     def update(self,obj,pID=None,val=None):
 
         echo_gpio = grovepi.ultrasonicRead(ultrasonic_ranger)
-        # print(echo_gpio)
+        print(echo_gpio)
 	time.sleep(0.01)
 	if echo_gpio > self.threshold:
 	    output = False

@@ -3,7 +3,7 @@ from udpwkpf import WuClass, Device
 import sys
 from udpwkpf_io_interface import *
 from grove_rgb_lcd import *
-
+import grovepi
 
 class SC_Displayer(WuClass):
     def __init__(self):

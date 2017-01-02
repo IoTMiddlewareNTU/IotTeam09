@@ -5,7 +5,7 @@ from twisted.internet import reactor
 from udpwkpf_io_interface import *
 from grove_rgb_lcd import *
 
-touch_pad = 7
+touch_pad = 11
 #Trig_Pin = 8
 #Echo_Pin = 9
 # ultrasonic_ranger = 7;
@@ -22,13 +22,14 @@ class SC_Height_Tracker(WuClass):
 	print "Height tracker init!"
 
     def update(self,obj,pID=None,val=None):
-        try:
-            current_value = digital_read(self.IO)
-            if current_value:
-                self.is_full = not self.is_full
-	        obj.setProperty(0, self.is_full)
-        except IOError:
-            print "Error"
+        print self.is_full
+        current_value = digital_read(self.IO)
+        if current_value:
+            self.is_full = True
+        else:
+            self.is_full = False
+	obj.setProperty(0, self.is_full)
+	time.sleep(0.1)
 
 if __name__== "__main__":
 
@@ -40,7 +41,6 @@ if __name__== "__main__":
             m = SC_Height_Tracker()
             self.addClass(m, 0)
             self.obj_height_tracker = self.addObject(m.ID)
-	
 
     if len(sys.argv) <= 2:	
         print 'python %s <gip> <dip>:<port>' % sys.argv[0]
@@ -53,4 +53,4 @@ if __name__== "__main__":
     d = MyDevice(sys.argv[1],sys.argv[2])
 
     reactor.run()
-    device_cleanup()
+    device.cleanup()
