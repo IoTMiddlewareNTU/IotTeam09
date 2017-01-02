@@ -6,9 +6,9 @@ import random
 from math import log
 import time
 
-import sc_can_controller_1 as can_controller 
-import sc_height_tracker_1 as height_tracker
-import sc_displayer_1 as displayer
+import sc_can_controller_4 as can_controller 
+import sc_height_tracker_4 as height_tracker
+import sc_displayer_4 as displayer
 
 class MyDevice(Device):
     def __init__(self,addr,localaddr):
