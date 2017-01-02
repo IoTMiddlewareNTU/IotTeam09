@@ -3,28 +3,28 @@ import sys
 from udpwkpf_io_interface import *
 from twisted.internet import reactor
 
+class SC_Can_Controller_1(WuClass):
+    def __init__(self):
+        WuClass.__init__(self)
+        self.loadClass('SC_Can_Controller_1')
+
+    def update(self,obj,pID=None,val=None):
+        # obj properties are
+        # 0: assigned_val (rw), 1: alert (rw), 2: lock (wr) 
+
+        if pID == 0:
+            print "[Assigned] New type val = ", val
+            obj.setProperty(0, val)
+        elif pID == 1:
+            if val == True:
+                print "[Alert] Can is full"
+                obj.setProperty(0, 0)
+                obj.setProperty(1, True)
+            elif val == False:
+                print "[Alert] Can is cleaned"
+                obj.setProperty(1, False)
+
 if __name__ == "__main__":
-    class SC_Can_Controller_1(WuClass):
-        def __init__(self):
-            WuClass.__init__(self)
-            self.loadClass('SC_Can_Controller_1')
-
-        def update(self,obj,pID=None,val=None):
-            # obj properties are
-            # 0: assigned_val (rw), 1: alert (rw), 2: lock (wr) 
-
-            if pID == 0:
-                print "[Assigned] New type val = ", val
-                obj.setProperty(0, val)
-            elif pID == 1:
-                if val == True:
-                    print "[Alert] Can is full"
-                    obj.setProperty(0, 0)
-                    obj.setProperty(1, True)
-                elif val == False:
-                    print "[Alert] Can is cleaned"
-                    obj.setProperty(1, False)
-
     class MyDevice(Device):
         def __init__(self,addr,localaddr):
             Device.__init__(self,addr,localaddr)

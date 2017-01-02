@@ -31,25 +31,27 @@ class SC_Height_Tracker_1(WuClass):
 	print output
 	obj.setProperty(0, output)
 
-class MyDevice(Device):
-    def __init__(self,addr,localaddr):
-        Device.__init__(self,addr,localaddr)
+if __name__== "__main__":
 
-    def init(self):
-        m = SC_Height_Tracker_1()
-        self.addClass(m, 0)
-        self.obj_height_tracker = self.addObject(m.ID)
+    class MyDevice(Device):
+        def __init__(self,addr,localaddr):
+            Device.__init__(self,addr,localaddr)
+
+        def init(self):
+            m = SC_Height_Tracker_1()
+            self.addClass(m, 0)
+            self.obj_height_tracker = self.addObject(m.ID)
 	
 
-if len(sys.argv) <= 2:
-	print 'python %s <gip> <dip>:<port>' % sys.argv[0]
+    if len(sys.argv) <= 2:	
+        print 'python %s <gip> <dip>:<port>' % sys.argv[0]
 	print '      <gip>: IP addrees of gateway'
 	print '      <dip>: IP address of Python device'
 	print '      <port>: An unique port number'
 	print ' ex. python %s 192.168.4.7 127.0.0.1:3000' % sys.argv[0]
 	sys.exit(-1)
 
-d = MyDevice(sys.argv[1],sys.argv[2])
+    d = MyDevice(sys.argv[1],sys.argv[2])
 
-reactor.run()
-device_cleanup()
+    reactor.run()
+    device_cleanup()

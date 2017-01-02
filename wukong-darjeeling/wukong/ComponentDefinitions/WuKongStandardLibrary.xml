@@ -650,8 +650,14 @@
     <WuClass name="SC_Assigner" id="25000" virtual="true" type="soft">
         <property name="type_1" access="readonly" datatype="short" default="0" />
         <property name="type_2" access="readonly" datatype="short" default="0" />
+        <property name="type_3" access="readonly" datatype="short" default="0" />
+        <property name="type_4" access="readonly" datatype="short" default="0" />
+        <property name="type_5" access="readonly" datatype="short" default="0" />
         <property name="alert_1" access="writeonly" datatype="boolean" default="false" />
         <property name="alert_2" access="writeonly" datatype="boolean" default="false" />
+        <property name="alert_3" access="writeonly" datatype="boolean" default="false" />
+        <property name="alert_4" access="writeonly" datatype="boolean" default="false" />
+        <property name="alert_5" access="writeonly" datatype="boolean" default="false" />
         <property name="clean" access="readonly" datatype="boolean" default="false" />
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="100" />
     </WuClass>
