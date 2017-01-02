@@ -691,12 +691,12 @@
     </WuClass>
 
     <WuClass name="SC_Displayer_2" id="25007" virtual="false" type="hard">
-    	<property name="type" access="writeonly" datatype="short" default="0" />
+    	<property name="type" access="readwrite" datatype="short" default="0" />
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="100" />
     </WuClass>
 
     <WuClass name="SC_Height_Tracker_2" id="25008" virtual="false" type="hard">
-    	<property name="is_full" access="readonly" datatype="boolean" default="false" />
+    	<property name="is_full" access="readwrite" datatype="boolean" default="false" />
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="100" />
     </WuClass>
 
@@ -708,12 +708,12 @@
     </WuClass>
 
     <WuClass name="SC_Displayer_3" id="25010" virtual="false" type="hard">
-    	<property name="type" access="writeonly" datatype="short" default="0" />
+    	<property name="type" access="readwrite" datatype="short" default="0" />
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="100" />
     </WuClass>
 
     <WuClass name="SC_Height_Tracker_3" id="25011" virtual="false" type="hard">
-    	<property name="is_full" access="readonly" datatype="boolean" default="false" />
+    	<property name="is_full" access="readwrite" datatype="boolean" default="false" />
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="100" />
     </WuClass>
 
@@ -725,12 +725,12 @@
     </WuClass>
 
     <WuClass name="SC_Displayer_4" id="25013" virtual="false" type="hard">
-    	<property name="type" access="writeonly" datatype="short" default="0" />
+    	<property name="type" access="readwrite" datatype="short" default="0" />
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="100" />
     </WuClass>
 
     <WuClass name="SC_Height_Tracker_4" id="25014" virtual="false" type="hard">
-    	<property name="is_full" access="readonly" datatype="boolean" default="false" />
+    	<property name="is_full" access="readwrite" datatype="boolean" default="false" />
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="100" />
     </WuClass>
 
@@ -742,12 +742,12 @@
     </WuClass>
 
     <WuClass name="SC_Displayer_5" id="25016" virtual="false" type="hard">
-    	<property name="type" access="writeonly" datatype="short" default="0" />
+    	<property name="type" access="readwrite" datatype="short" default="0" />
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="100" />
     </WuClass>
 
     <WuClass name="SC_Height_Tracker_5" id="25017" virtual="false" type="hard">
-    	<property name="is_full" access="readonly" datatype="boolean" default="false" />
+    	<property name="is_full" access="readwrite" datatype="boolean" default="false" />
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="100" />
     </WuClass>
 </WuKong>
