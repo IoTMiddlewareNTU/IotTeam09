@@ -10,13 +10,13 @@ if __name__ == "__main__":
             self.loadClass('SC_Assigner')
             
             # types
-            self.type_num = 2 # 0: unavailable, 1: general, 2: paper, 3: plastic
-            self.type_assigned = [True, False]
+            self.type_num = 4 # 0: unavailable, 1: general, 2: paper, 3: plastic
+            self.type_assigned = [True, False, False, False]
             
             # cans
-            self.can_num = 2
-            self.can_type  = [0, 0]
-            self.can_alert = [False, False]
+            self.can_num = 5
+            self.can_type  = [0, 0, 0, 0, 0]
+            self.can_alert = [False, False, False, False, False]
             
             # 'clean' asset
             self.clean_index = self.can_num * 2

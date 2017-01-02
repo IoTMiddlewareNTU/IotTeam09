@@ -17,9 +17,13 @@ if __name__ == "__main__":
                 print "[Assigned] New type val = ", val
                 obj.setProperty(0, val)
             elif pID == 1:
-                print "[Alert] Can is full"
-                obj.setProperty(0, 0)
-                obj.setProperty(1, True)
+                if val == True:
+                    print "[Alert] Can is full"
+                    obj.setProperty(0, 0)
+                    obj.setProperty(1, True)
+                elif val == False:
+                    print "[Alert] Can is cleaned"
+                    obj.setProperty(1, False)
 
     class MyDevice(Device):
         def __init__(self,addr,localaddr):

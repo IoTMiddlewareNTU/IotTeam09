@@ -1,9 +1,7 @@
 # WuKong IoT Final Project: SmartCans
 
 #### Issues
-* Need refresh rate for any of the classes?
-* Where should the gateway be opened, PC or Pi?
-* Which device should run the assigner?
+* Refresh rate height tracker
 
 #### 1. Team Members
 * B03902007 Elise Cheng (elisedc)

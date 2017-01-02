@@ -6,10 +6,10 @@ from grove_rgb_lcd import *
 
 if __name__ == "__main__":
 
-    class SC_Displayer_1(WuClass):
+    class SC_Displayer_4(WuClass):
         def __init__(self):
             WuClass.__init__(self)
-            self.loadClass('SC_Displayer_1')
+            self.loadClass('SC_Displayer_4')
             setText("LCD Displayer \ninit success")
             setRGB(0,128,64)
 	    print "LCD Displayer init success"
@@ -19,13 +19,15 @@ if __name__ == "__main__":
                 if pID == 0:
                     if val == 0:
                         setText("Unavailable\n")
-			setRGB(0,64,128)
-			# print "FULL"
+			setRGB(128, 64, 0)
                     elif val == 1:
 			setText("General garbage\n")
-			setRGB(0,128,64)
+			setRGB(0, 128, 64)
                     elif val == 2:
                         setText("Paper\n")
+                        setRGB(0, 128, 64)
+                    elif val == 3:
+                        setText("Plastic\n")
                         setRGB(0, 128, 64)
             except IOError:
                 print ("Error")
@@ -35,7 +37,7 @@ if __name__ == "__main__":
             Device.__init__(self,addr,localaddr)
 
         def init(self):
-            m1 = SC_Displayer_1()
+            m1 = SC_Displayer_4()
             self.addClass(m1,0)
             self.obj_sc_displayer = self.addObject(m1.ID)
 

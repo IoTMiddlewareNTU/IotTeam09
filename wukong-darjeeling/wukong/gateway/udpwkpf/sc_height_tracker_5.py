@@ -10,25 +10,23 @@ from grove_rgb_lcd import *
 ultrasonic_ranger = 7;
 close = 0
 
-class SC_Height_Tracker_1(WuClass):
+class SC_Height_Tracker_5(WuClass):
     def __init__(self):
         WuClass.__init__(self)
-        self.loadClass('SC_Height_Tracker_1')
+        self.loadClass('SC_Height_Tracker_5')
         self.threshold = 10
 	print "Ultrasound sensor init!"
 
     def update(self,obj,pID=None,val=None):
 
         echo_gpio = grovepi.ultrasonicRead(ultrasonic_ranger)
-        print(echo_gpio)
-	time.sleep(0.05)
+        # print(echo_gpio)
+	time.sleep(0.01)
 	if echo_gpio > self.threshold:
 	    output = False
-	    #setText("distance OK\nwariard gay")
 	    close = 0
-	elif echo_gpio<= self.threshold:
+	elif echo_gpio <= self.threshold:
 	    output = True
-	    #setText("too close\nylc love wariard")
 	    close = 1
 	print output
 	obj.setProperty(0, output)
@@ -38,9 +36,9 @@ class MyDevice(Device):
         Device.__init__(self,addr,localaddr)
 
     def init(self):
-        m = SC_Height_Tracker_1()
+        m = SC_Height_Tracker_5()
         self.addClass(m, 0)
-        self.obj_ultrasound_sensor = self.addObject(m.ID)
+        self.obj_height_tracker = self.addObject(m.ID)
 	
 
 if len(sys.argv) <= 2:

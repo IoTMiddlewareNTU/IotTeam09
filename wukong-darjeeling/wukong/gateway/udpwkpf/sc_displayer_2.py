@@ -19,13 +19,15 @@ if __name__ == "__main__":
                 if pID == 0:
                     if val == 0:
                         setText("Unavailable\n")
-			setRGB(0,64,128)
-			# print "FULL"
+			setRGB(128, 64, 0)
                     elif val == 1:
 			setText("General garbage\n")
-			setRGB(0,128,64)
+			setRGB(0, 128, 64)
                     elif val == 2:
                         setText("Paper\n")
+                        setRGB(0, 128, 64)
+                    elif val == 3:
+                        setText("Plastic\n")
                         setRGB(0, 128, 64)
             except IOError:
                 print ("Error")
