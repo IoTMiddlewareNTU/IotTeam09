@@ -35,7 +35,8 @@ class SC_Assigner(WuClass):
             if pID == self.can_num + can_index:
                 if val == True:
                     print "[Alert] Can no. ", can_index, " is full"
-                    self.type_assigned[ self.can_type[can_index] ] = False
+                    if self.can_type[can_index] != 0:
+                        self.type_assigned[ self.can_type[can_index] ] = False
                     self.can_alert[can_index] = True
                     self.can_type[can_index] = 0
                 elif val == False:
