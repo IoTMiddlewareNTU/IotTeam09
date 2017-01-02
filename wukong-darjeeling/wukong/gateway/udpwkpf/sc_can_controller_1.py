@@ -7,7 +7,7 @@ class SC_Can_Controller(WuClass):
     def __init__(self):
         WuClass.__init__(self)
         self.loadClass('SC_Can_Controller_1')
-        self.type = 0
+        self.type = -1
         print 'Controller init success'
 
     def update(self,obj,pID=None,val=None):
