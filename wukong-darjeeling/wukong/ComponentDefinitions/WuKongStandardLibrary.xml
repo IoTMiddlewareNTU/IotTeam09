@@ -652,12 +652,10 @@
         <property name="type_2" access="readwrite" datatype="short" default="0" />
         <property name="type_3" access="readwrite" datatype="short" default="0" />
         <property name="type_4" access="readwrite" datatype="short" default="0" />
-        <property name="type_5" access="readwrite" datatype="short" default="0" />
         <property name="alert_1" access="readwrite" datatype="boolean" default="false" />
         <property name="alert_2" access="readwrite" datatype="boolean" default="false" />
         <property name="alert_3" access="readwrite" datatype="boolean" default="false" />
         <property name="alert_4" access="readwrite" datatype="boolean" default="false" />
-        <property name="alert_5" access="readwrite" datatype="boolean" default="false" />
         <property name="clean" access="readwrite" datatype="boolean" default="false" />
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="100" />
     </WuClass>

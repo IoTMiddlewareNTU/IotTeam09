@@ -14,9 +14,9 @@ class SC_Assigner(WuClass):
         self.type_assigned = [True, False, False, False]
             
         # cans
-        self.can_num = 5
-        self.can_type  = [0, 0, 0, 0, 0]
-        self.can_alert = [False, False, False, False, False]
+        self.can_num = 4
+        self.can_type  = [0, 0, 0, 0]
+        self.can_alert = [False, False, False, False]
             
         # 'clean' asset
         self.clean_index = self.can_num * 2
