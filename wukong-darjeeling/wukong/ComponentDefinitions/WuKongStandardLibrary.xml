@@ -661,7 +661,7 @@
     </WuClass>
 
     <!-- Alerter -->
-    <WuClass name="SC_Alerter" id="25001" virtual="false" type="hard">
+    <WuClass name="SC_Alerter" id="25001" virtual="true" type="soft">
     	<property name="clean" access="readwrite" datatype="boolean" default="false" />
         <property name="refresh_rate" access="readwrite" datatype="refresh_rate" default="100" />
     </WuClass>
