@@ -14,8 +14,10 @@ if __name__ == "__main__":
             # 0: clean (wo)
 
             if pID == 0:
-                print "[Alert] Clean"
-
+                if val == True:
+                    print "[Alert] Clean"
+                else:
+                    print "No Full Trashcan"
     class MyDevice(Device):
         def __init__(self,addr,localaddr):
             Device.__init__(self,addr,localaddr)
