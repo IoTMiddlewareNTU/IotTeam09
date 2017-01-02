@@ -11,7 +11,7 @@ class SC_Displayer(WuClass):
         self.loadClass('SC_Displayer_4')
         setText("LCD Displayer \ninit success")
         setRGB(0,128,64)
-        self.type = 0
+        self.type = -1
         print "LCD Displayer init success"
 
     def update(self,obj,pID=None,val=None):

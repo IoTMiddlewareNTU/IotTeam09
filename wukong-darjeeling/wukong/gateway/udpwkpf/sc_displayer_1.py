@@ -9,9 +9,9 @@ class SC_Displayer(WuClass):
     def __init__(self):
         WuClass.__init__(self)
         self.loadClass('SC_Displayer_1')
-        setText("LCD Displayer \ninit success")
-        setRGB(0,128,64)
-        self.type = 0
+        setText("Unavailable\n")
+        setRGB(128, 64, 0)
+        self.type = -1
         print "LCD Displayer init success"
 
     def update(self,obj,pID=None,val=None):
