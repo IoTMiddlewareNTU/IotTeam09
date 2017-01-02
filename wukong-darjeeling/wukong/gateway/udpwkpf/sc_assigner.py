@@ -4,6 +4,7 @@ from udpwkpf_io_interface import *
 from twisted.internet import reactor
 
 class SC_Assigner(WuClass):
+    
     def __init__(self):
         WuClass.__init__(self)
         self.loadClass('SC_Assigner')
@@ -34,10 +35,9 @@ class SC_Assigner(WuClass):
             if pID == self.can_num + can_index:
                 if val == True:
                     print "[Alert] Can no. ", can_index, " is full"
+                    self.type_assigned[ self.can_type[can_index] ] = False
                     self.can_alert[can_index] = True
                     self.can_type[can_index] = 0
-                    obj.setProperty(can_index, 0) # assign 0 type to can (unavailable)
-                    self.type_assigned[ self.can_type[can_index] ] = False
                 elif val == False:
                     print "[Cleaned] Can no. ", can_index, " is clean"
                     self.can_alert[can_index] = False
@@ -68,25 +68,26 @@ class SC_Assigner(WuClass):
                 if not assigned:
                     print '[Error] Unable to assign type'
         for can_index in range(0, self.can_num, 1):
-                obj.setProperty(can_index, self.can_type[can_index])
+            obj.setProperty(can_index, self.can_type[can_index])
         print 'can_type = ', str(self.can_type), ', can_alert = ', str(self.can_alert), ', type_assigned = ', str(self.type_assigned)
 
-class MyDevice(Device):
-    def __init__(self,addr,localaddr):
-        Device.__init__(self,addr,localaddr)
+if __name__ == "__main__":
+    class MyDevice(Device):
+        def __init__(self,addr,localaddr):
+            Device.__init__(self,addr,localaddr)
 
-    def init(self):
-        cls = SC_Assigner()
-        self.addClass(cls,0)
-        self.obj_assigner = self.addObject(cls.ID)
+        def init(self):
+            cls = SC_Assigner()
+            self.addClass(cls,0)
+            self.obj_assigner = self.addObject(cls.ID)
 
-if len(sys.argv) <= 2:
-    print 'python %s <gip> <dip>:<port>' % sys.argv[0]
-    print '      <gip>: IP addrees of gateway'
-    print '      <dip>: IP address of Python device'
-    print '      <port>: An unique port number'
-    print ' ex. python %s 192.168.4.7 127.0.0.1:3000' % sys.argv[0]
-    sys.exit(-1)
+    if len(sys.argv) <= 2:
+        print 'python %s <gip> <dip>:<port>' % sys.argv[0]
+        print '      <gip>: IP addrees of gateway'
+        print '      <dip>: IP address of Python device'
+        print '      <port>: An unique port number'
+        print ' ex. python %s 192.168.4.7 127.0.0.1:3000' % sys.argv[0]
+        sys.exit(-1)
 
-d = MyDevice(sys.argv[1],sys.argv[2])
-reactor.run()
+    d = MyDevice(sys.argv[1],sys.argv[2])
+    reactor.run()

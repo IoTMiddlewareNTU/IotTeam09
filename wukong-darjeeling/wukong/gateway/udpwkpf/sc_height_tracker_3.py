@@ -9,7 +9,7 @@ from grove_rgb_lcd import *
 ultrasonic_ranger = 7;
 close = 0
 
-class SC_Height_Tracker_3(WuClass):
+class SC_Height_Tracker(WuClass):
     def __init__(self):
         WuClass.__init__(self)
         self.loadClass('SC_Height_Tracker_3')
@@ -35,7 +35,7 @@ class MyDevice(Device):
         Device.__init__(self,addr,localaddr)
 
     def init(self):
-        m = SC_Height_Tracker_3()
+        m = SC_Height_Tracker()
         self.addClass(m, 0)
         self.obj_height_tracker = self.addObject(m.ID)
 	

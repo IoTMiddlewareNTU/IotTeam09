@@ -6,24 +6,24 @@ import random
 from math import log
 import time
 
-import sc_can_controller_1 
-import sc_height_tracker_1
-import sc_displayer_1
+import sc_can_controller_1 as can_controller 
+import sc_height_tracker_1 as height_tracker
+import sc_displayer_1 as displayer
 
 class MyDevice(Device):
     def __init__(self,addr,localaddr):
         Device.__init__(self,addr,localaddr)
 
     def init(self):
-        m2 = sc_can_controller_1.SC_Can_Controller_1()
+        m2 = can_controller.SC_Can_Controller()
         self.addClass(m2, 0)
         self.obj_can_controller = self.addObject(m2.ID)
-        m3 = sc_height_tracker_1.SC_Height_Tracker_1()
+        m3 = height_tracker.SC_Height_Tracker()
         self.addClass(m3,0)
         self.obj_height_tracker = self.addObject(m3.ID)
-        m4 = sc_displayer_1.SC_Displayer_1()
+        m4 = displayer.SC_Displayer()
         self.addClass(m4,0)
-        self.obj_sc_displayer = self.addObject(m4.ID)
+        self.obj_displayer = self.addObject(m4.ID)
 
 if len(sys.argv) <= 2:
         print 'python udpwkpf.py <ip> <ip:port>'
