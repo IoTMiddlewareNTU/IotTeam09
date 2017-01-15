@@ -1,7 +1,10 @@
 # WuKong IoT Final Project: SmartCans
 
-#### Issues
-* Refresh rate height tracker
+#### Contents of This Repository
+
+* Final report: **finalReport.pdf**
+* Presentation slides: **presentation.pdf**
+* Source code: **wukong-darjeeling/**
 
 #### 1. Team Members
 * B03902007 Elise Cheng (elisedc)
@@ -31,6 +34,7 @@
         * ` $ sudo reboot `
         * Check if success: ` $ sudo i2cdetect -y 1 `
     * Install GrovePi environment
+        * Download GrovePi library
         * ` $ cd GrovePi/Script `
         * ` $ sudo chmod +x install.sh `
         * ` $ sudo ./install.sh `
