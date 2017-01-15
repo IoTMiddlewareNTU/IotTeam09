@@ -53,12 +53,10 @@
     * ` $ python start_gateway.py `
 
 #### 3. Equipment
-* LCD text display x5
-* trash cans x2
+* LCD text display x4
 * ultrasonic distance detector x2
-* catflap x2 (DIY with PE boards)
-* LED light bulb x5
-* Raspberry pi x5
+* touch pad x2
+* Raspberry pi x4
 
 #### 4. WuClasses
 1. SC_Assigner (master/ virtual)
@@ -97,7 +95,7 @@
 	* initialization functions: `[Class_Name]()`
 
 #### 4. Scenario & Operation
-* Simulate 5 trash cans running on SmartCan application
+* Simulate 4 trash cans running on SmartCan application
 * **Scenario**: 2-3 types of trash
 
 #### 5. Reference
